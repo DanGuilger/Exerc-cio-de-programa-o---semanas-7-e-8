@@ -41,7 +41,7 @@ console.log("O produto dos valores é:", produto);
 ```
 Qual das seguintes alternativas melhor descreve o que o código faz?
 
-A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console.
+A) O código avalia a expressão booleana, imprime `true`, calcula o produto dos números na lista e imprime o resultado no console. (Correta)
 
 B) O código avalia a expressão booleana, imprime `false`, calcula o produto dos números na lista e imprime o resultado no console.
 
@@ -103,7 +103,7 @@ function analisarCredito2() {
 ```
 Se ambas as funções forem executadas com os valores fornecidos, qual será a saída exibida no console?
 
-A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.'
+A) Ambas as funções exibirão: 'Seu crédito foi aprovado. Saldo disponível: 400.' (Correta)
 
 B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -600.', enquanto analisarCredito2() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.'
 
@@ -129,7 +129,7 @@ Qual das seguintes alternativas melhor descreve o comportamento do código?
 
 A) O código verifica se a idade indica um adulto ou um idoso e exibe a mensagem correspondente.
 
-B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!".
+B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você é um adulto!". Caso contrário, verifica se é menor de idade e exibe "Você é menor de idade!". Se nenhuma das condições anteriores for verdadeira, exibe "Você está na melhor idade!". (Correta)
 
 C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
 
@@ -172,7 +172,7 @@ Dispositivo 4 ligado com bateria extra. Energia restante: 0
 
 Dispositivo 5 ligado. Energia restante: -200
 
-B)
+B) (Correta)
 Dispositivo 1 ligado. Energia restante: 900
 
 Dispositivo 2 ligado com bateria extra. Energia restante: 700
@@ -182,6 +182,8 @@ Dispositivo 3 ligado. Energia restante: 200
 Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
+
+(Correta)
 
 C)
 Dispositivo 1 ligado. Energia restante: 900
@@ -211,7 +213,7 @@ Escolha a opção que melhor descreve seu propósito:
 
 A) O método update() é responsável por carregar os assets do jogo antes da cena ser exibida.
 
-B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena.
+B) O método update() é chamado continuamente a cada quadro (frame) do jogo, sendo usado para atualizar a lógica, movimentação e interações dos objetos na cena. (Correta)
 
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
@@ -222,7 +224,7 @@ ______
 
 Escolha a opção que responde corretamente:
 
-A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças.
+A) Simular física avançada, incluindo corpos rígidos, colisões complexas e interação entre objetos com gravidade e forças. (Correta)
 
 B) Gerenciar eventos de entrada do usuário, como cliques e toques na tela, permitindo movimentação de personagens.
 
@@ -245,6 +247,23 @@ Pedidos entre R$50,00 e R$199,99 (inclusive) → "Frete com custo adicional!"
 Pedidos de R$200,00 ou mais → "Frete grátis!"
 ```
 Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
+
+```
+INÍCIO
+
+    DEFINIR valor_total COMO NUMÉRICO
+    ESCREVER "Digite o valor total da compra:"
+    LER valor_total
+
+    SE valor_total < 50
+        ESCREVER "Frete não disponível!"
+    SENÃO SE valor_total >= 50 E valor_total <= 199.99
+        ESCREVER "Frete com custo adicional!"
+    SENÃO
+        ESCREVER "Frete grátis!"
+
+FIM
+```
 ______
 
 **8)** Considere a implementação da classe base Veiculo em um sistema de modelagem de veículos. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Carro e Moto, que herdam da classe Veiculo, adicionando atributos específicos e métodos para calcular o consumo de combustível de um carro e de uma moto, respectivamente.
@@ -262,6 +281,56 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+```
+CLASSE Veiculo
+    ATRIBUTOS:
+        modelo
+        ano
+
+    MÉTODO Construtor(modelo, ano):
+        this.modelo ← modelo
+        this.ano ← ano
+
+    MÉTODO CalcularConsumo():
+        ESCREVER "Cálculo genérico de consumo"
+
+FIM CLASSE
+
+
+CLASSE Carro HERDA Veiculo
+    ATRIBUTOS:
+        quilometragem
+        eficiencia
+
+    MÉTODO Construtor(modelo, ano, quilometragem, eficiencia):
+        CHAMAR Veiculo.Construtor(modelo, ano)
+        this.quilometragem ← quilometragem
+        this.eficiencia ← eficiencia
+
+    MÉTODO CalcularConsumo():
+        consumo ← quilometragem / eficiencia
+        ESCREVER "Consumo do carro: " + consumo + " litros"
+
+FIM CLASSE
+
+
+CLASSE Moto HERDA Veiculo
+    ATRIBUTOS:
+        quilometragem
+        eficiencia
+
+    MÉTODO Construtor(modelo, ano, quilometragem, eficiencia):
+        CHAMAR Veiculo.Construtor(modelo, ano)
+        this.quilometragem ← quilometragem
+        this.eficiencia ← eficiencia
+
+    MÉTODO CalcularConsumo():
+        consumo ← quilometragem / eficiencia
+        ESCREVER "Consumo da moto: " + consumo + " litros"
+
+FIM CLASSE
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
@@ -275,6 +344,34 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+```
+INÍCIO
+
+    ENTRADA velocidadeInicial
+    ENTRADA desaceleracao
+    ENTRADA velocidadeSegura
+    ENTRADA tempoLimite
+    ENTRADA desaceleracaoMinima
+    ENTRADA desaceleracaoMaxima
+
+    SE desaceleracao < desaceleracaoMinima OU desaceleracao > desaceleracaoMaxima ENTÃO
+        ESCREVER "Erro: desaceleração fora dos limites permitidos."
+        SAIR
+    FIM SE
+
+    tempoNecessario ← (velocidadeInicial - velocidadeSegura) / desaceleracao
+
+    SE tempoNecessario > tempoLimite ENTÃO
+        ESCREVER "Pouso inviável: tempo excede o limite seguro."
+    SENÃO SE tempoNecessario < 0 ENTÃO
+        ESCREVER "Parâmetros inválidos: velocidade segura já atingida ou desaceleração negativa."
+    SENÃO
+        ESCREVER "Tempo calculado para pouso seguro: " + tempoNecessario + " segundos."
+    FIM SE
+
+FIM
+```
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
@@ -307,3 +404,33 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+```
+Função CalcularImpactoFinanceiro(investimentos, fatores):
+
+    linhasInvestimento ← contarLinhas(investimentos)
+    colunasInvestimento ← contarColunas(investimentos)
+    linhasFatores ← contarLinhas(fatores)
+    colunasFatores ← contarColunas(fatores)
+
+    SE colunasInvestimento ≠ linhasFatores ENTÃO
+        ESCREVER "Erro: Dimensões incompatíveis para multiplicação."
+        RETORNAR NULO
+    FIM SE
+
+    resultado ← matrizVazia(linhasInvestimento, colunasFatores)
+
+    PARA linha DE 0 ATÉ linhasInvestimento - 1 FAÇA
+        PARA coluna DE 0 ATÉ colunasFatores - 1 FAÇA
+            acumulador ← 0
+
+            PARA i DE 0 ATÉ colunasInvestimento - 1 FAÇA
+                acumulador ← acumulador + (investimentos[linha][i] × fatores[i][coluna])
+            FIM PARA
+
+            resultado[linha][coluna] ← acumulador
+        FIM PARA
+    FIM PARA
+
+    RETORNAR resultado
+```
